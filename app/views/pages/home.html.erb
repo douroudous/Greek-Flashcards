@@ -1,6 +1,6 @@
 <%= javascript_pack_tag "home" %>
 
-<div class="card text-center flashcard">
+<div id="flashcard" class="card text-center" data-word-id="<%= @word.id %>">
   <div class="card-body">
     <h2><%= @word.english %></h2>
     <div id="reveal" class="d-block">
@@ -8,8 +8,21 @@
     </div>
     <div id="translation" class="d-none">
       <h2><%= @word.greek %></h2>
-      <button id="result-button" data-result="correct" type="button" class="btn btn-primary">Correct</button>
-      <button id="result-button" data-result="incorrect" type="button" class="btn btn-danger">Incorrect</button>
+      <div id="buttons">
+        <button id="result-button" data-result="correct" type="button" class="btn btn-primary">Correct</button>
+        <button id="result-button" data-result="incorrect" type="button" class="btn btn-danger">Incorrect</button>
+      </div>
+    </div>
+    <div id="correct-message" class="d-none">
+      <div class="alert alert-primary" role="alert">NICE JOB</div>
+    </div>
+    <div id="incorrect-message" class="d-none">
+      <div class="alert alert-danger" role="alert">TRY AGAIN</div>
+    </div>
+    <div id="next" class="d-none">
+      <button type="button" class="btn btn-dark" onClick="window.location.reload();">
+        New Random Word
+      </button>
     </div>
   </div>
 </div>

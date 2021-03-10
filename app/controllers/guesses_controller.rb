@@ -26,7 +26,7 @@ class GuessesController < ApplicationController
     respond_to do |format|
       if @guess.save
         format.html { redirect_to @guess, notice: "Guess was successfully created." }
-        format.json { render :show, status: :created, location: @guess }
+        format.json { render json: { status: :ok, result: @guess.correct }}
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @guess.errors, status: :unprocessable_entity }
