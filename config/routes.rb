@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
+  resources :guesses
   resources :words
   resources :groups
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
