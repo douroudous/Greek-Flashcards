@@ -1,5 +1,15 @@
-<div>
-  <h2><%= @word.english %></h2>
-  <h2><%= @word.greek %></h2>
+<%= javascript_pack_tag "home" %>
+
+<div class="card text-center flashcard">
+  <div class="card-body">
+    <h2><%= @word.english %></h2>
+    <div id="reveal" class="d-block">
+      <button type="button" class="btn btn-success">Reveal</button>
+    </div>
+    <div id="translation" class="d-none">
+      <h2><%= @word.greek %></h2>
+      <button id="result-button" data-result="correct" type="button" class="btn btn-primary">Correct</button>
+      <button id="result-button" data-result="incorrect" type="button" class="btn btn-danger">Incorrect</button>
+    </div>
+  </div>
 </div>
-<small class="text-muted">With faded secondary text</small>
